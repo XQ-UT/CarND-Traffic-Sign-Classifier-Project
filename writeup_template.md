@@ -74,7 +74,28 @@ To train the model, I used ```AdamOptimizer``` with learning rate 0.001 and batc
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-My final model results were:
+The original model I chose is LeNet(without dropout) from the previous class. The final accuracy is shown as Figure 2. I even did not apply data pre-processing to datasets. The final test accuracy stayed around 0.852 while training accuracy is much higher at 0.975.
+
+<p align="center">
+  <br>
+  <img src="report/before_normalization.jpg" width="500" height="300"/>
+  <em>Figure 2: Initial Model Accuracy</em>
+</p>
+
+Apparently, the model is overfitted. I applied the following technoloy to address the overfit issue:
+* Apply normalization to dataset.
+* Add dropout layer after ReLu activation.
+* Add batch normalization before ReLu activation.
+* Reduce model complexity, including reducing number of filters in conv layer, reducing number of neurons in fully-connected layer. 
+
+
+My final model training graph and accuracy were:
+
+<p align="center">
+  <br>
+  <img src="report/final_accuracy.jpg" width="500" height="300"/>
+  <em>Figure 3: Final Model Accuracy</em>
+</p>
 
 | Type       |     Accuracy	  			| 
 |:----------:|:-----------------:| 
