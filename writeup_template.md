@@ -72,13 +72,13 @@ My final model consisted of the following layers:
 #### 3. Training Process
 To train the model, I used ```AdamOptimizer``` with learning rate 0.001 and batch size 128. The final model was trained for 12 epochs.
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
+#### 4. Accuracy Improvement
 The original model I chose is LeNet(without dropout) from the previous class. The final accuracy is shown as Figure 2. I even did not apply data pre-processing to datasets. The final test accuracy stayed around 0.852 while training accuracy is much higher at 0.975.
 
 <p align="center">
   <br>
   <img src="report/before_normalization.jpg" width="500" height="300"/>
+  <br>
   <em>Figure 2: Initial Model Accuracy</em>
 </p>
 
@@ -89,27 +89,22 @@ Apparently, the model is overfitted. I applied the following technoloy to addres
 * Reduce model complexity, including reducing number of filters in conv layer, reducing number of neurons in fully-connected layer. 
 
 
-My final model training graph and accuracy were:
+My final model training graph were:
 
 <p align="center">
   <br>
   <img src="report/final_accuracy.jpg" width="500" height="300"/>
+  <br>
   <em>Figure 3: Final Model Accuracy</em>
 </p>
+
+The fianl accuracy is shown below:
 
 | Type       |     Accuracy	  			| 
 |:----------:|:-----------------:| 
 | Training   | 0.995   					    	| 
 | Validation | 0.942	            |
 | Testing    |	0.933										  	|
-
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
 
 #### 5 Test a Model on New Images
