@@ -17,7 +17,7 @@ Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/4
 
 ### Data Set Summary & Exploration
 
-I used the numpy to calculate summary statistics of the traffic signs data set:
+I used the numpy library to calculate summary statistics of the traffic signs data set:
 
 | Data Type            |     Value	     			| 
 |:--------------------:|:-----------------:| 
@@ -26,8 +26,6 @@ I used the numpy to calculate summary statistics of the traffic signs data set:
 | Test Data Size       | 12630	            |
 | Image Shape          |	32 x 32 x	3				  	|
 | Unique Classes       |	43	   									  	|
-
-#### 2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. As we can see, the classes distribution is very similar accross training, validation and test set.
 
