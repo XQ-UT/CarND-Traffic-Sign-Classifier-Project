@@ -109,48 +109,56 @@ The fianl accuracy is shown below:
 
 #### 5 Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+Here are six German traffic signs that I found on the web:
+<p align="center">
+  <br>
+  <img src="sample_signs/13.jpg" width="200" height="200"/>
+  <img src="sample_signs/14.jpg" width="200" height="200"/>
+  <img src="sample_signs/23.jpg" width="200" height="200"/>
+  <img src="sample_signs/25.jpg" width="200" height="200"/>
+  <img src="sample_signs/28.jpg" width="200" height="200"/>
+  <img src="sample_signs/4.jpg" width="200" height="200"/>
+  <br>
+  <em>Figure 4: Example new images from web</em>
+</p>
 
-Here are five German traffic signs that I found on the web:
-
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
-
-The first image might be difficult to classify because ...
-
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+The third image might be difficult to classify because the background is full of branches and green leaves. Also the ```Slipper Road ``` sign is a little more complicated in shape and image resizing (to 32x32x3) also reduced image quality, making it even harder to recognize for the network.
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Image			           |     Prediction	        					| 
+|:--------------------:|:--------------------------------:| 
+| Yield         		   | Yield   		    							    | 
+| Stop      			     | Stop  										        | 
+| Slipper road	       | ***Speed limit (20km/h)***       |
+| Road work	      	   | Road work 					 				      |
+| Children crossing    | Children crossing                |
+| Speed limit (70km/h) | Speed limit (70km/h)  					  |
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This accuracy is much lower than we got for test set. Of course, the data size for sample images is too small so a single incorrect prediction can drastically affect the accuracy. 
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+The top five softmax probabilities for image 1,2,4,5,6 are **1.0** for the correct class and **0.0** for all the other classes. For image 3, we have:
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| Image 3 Probability   |     Prediction	      				| 
+|:---------------------:|:-----------------------------:| 
+| 1.00000000e+00        | Speed limit (20km/h)          | 
+| 2.71967654e-19    		| Speed limit (30km/h)          |
+| 4.80966460e-26	      | No entry						   			  |
+| 6.19991838e-36	      | General caution					 		  |
+| 0.00000000e+00				| Speed limit (50km/h)      	  |
 
 
-For the second image ... 
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+### Visualizing the Neural Network
+
+The first conv layer and second conv layer activation maps are shown in Figure 5. As we can see, the first conv layer extracted low level feature like edges while second conv layer extracted shapes. 
+
+<p align="center">
+  <br>
+  <img src="report/network_visualization.jpg" width="500" height="300"/>
+  <br>
+  <em>Figure 5: Neural Network Visualization</em>
+</p>
 
 
