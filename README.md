@@ -43,7 +43,7 @@ The only data pre-processing I did is normalization. For each image, it will be 
 ```python
 X_train = (X_train - X_train.mean(axis=0)) / (X_train.std(axis = 0) + 1e-8)
 ```
-
+Normalization will make each pixel values to same sacle, which makes training converge much faster and improve model accuracy.
 
 #### 2. Network Architecture
 
@@ -148,7 +148,7 @@ The top five softmax probabilities for image 1,2,4,5,6 are **1.0** for the corre
 | 6.19991838e-36	      | General caution					 		  |
 | 0.00000000e+00				| Speed limit (50km/h)      	  |
 
-The prediction for image 3 is very similar to the others. The highest probability is still 1.0 and all the other prediction probabilities are very close to 0.0.
+The prediction for image 3 is very similar to the others. The highest probability is still 1.0 and all the other prediction probabilities are very close to 0.0. As we can see, the model is very ***confident*** on its prediction.
 
 
 ### Visualizing the Neural Network
