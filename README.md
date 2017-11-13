@@ -64,7 +64,7 @@ My final model consisted of the following layers:
 | Flatten 	        	| output 1440  									|
 | Fully connected		| output 256  									|
 | Dropout               | 0.4 dropout rate                              |
-| Fully connected		| output 10        								|
+| Fully connected		| output 43        								|
 | Softmax-Croos Entropy |                                               |
  
 
