@@ -148,6 +148,7 @@ The top five softmax probabilities for image 1,2,4,5,6 are **1.0** for the corre
 | 6.19991838e-36	      | General caution					 		  |
 | 0.00000000e+00				| Speed limit (50km/h)      	  |
 
+The prediction for image 3 is very similar to the others. The highest probability is still 1.0 and all the other prediction probabilities are very close to 0.0.
 
 
 ### Visualizing the Neural Network
